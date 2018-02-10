@@ -78,12 +78,9 @@ if [[ ! -z "${OPTIMIZE_FOR_GRAPH}" ]]; then
             echo "and then run this script again"
             exit 1
         fi
-    else
-        echo "${PRNT_SLCTV_BIN} found. Using it"
-        ${PRNT_SLCTV_BIN} --graphs=${OPTIMIZE_FOR_GRAPH} > ${TOP_SRCDIR}/tensorflow/core/framework/ops_to_register.h
-
     fi
-
+    echo "${PRNT_SLCTV_BIN} found. Using it"
+    ${PRNT_SLCTV_BIN} --graphs=${OPTIMIZE_FOR_GRAPH} > ${TOP_SRCDIR}/tensorflow/core/framework/ops_to_register.h
 fi
 
 if [[ "${ONLY_MAKE_TENSORFLOW}" != "true" ]]; then
